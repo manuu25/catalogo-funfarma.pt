@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beauty of Joseon - Catálogo de Productos</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      property="og:image"
+      content="https://bolt.new/static/og_default.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://bolt.new/static/og_default.png"
+    />
+
+    <style>
+      /* --- 1. RESET Y BASE --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        line-height: 1.6;
+        color: #2c3e50;
+        background-color: #f8f9fa;
+        min-height: 100vh;
+      }
+
+      /* --- 2. LAYOUT PRINCIPAL (Responsivo) --- */
+      .container {
+        width: 100%;
+        max-width: 1200px; /* Ancho máximo para pantallas grandes */
+        margin: 0 auto;
+        padding: 20px; /* Padding interno para que el contenido no toque los bordes */
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Espacio entre secciones */
+      }
+
+      /* --- 3. ENCABEZADO Y TEXTO INTRODUCTORIO --- */
+      .header {
+        display: flex;
+        flex-direction: column; /* Apila logo y texto */
+        align-items: center;
+        text-align: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .header-logo {
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      .subtitle-black {
+        max-width: 800px;
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.5;
+        text-align: justify; /* Justificamos el texto para mejor lectura */
+      }
+
+      /* --- 4. CUADRÍCULA DE PRODUCTOS (GRID RESPONSIVO) --- */
+      .brands-grid {
+        display: grid;
+        /* La clave de la responsividad: crea tantas columnas como quepan (min 180px) */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 25px; /* Espacio uniforme entre tarjetas */
+      }
+
+      /* --- 5. TARJETA DE PRODUCTO (Organización y Contenido) --- */
+      .brand-card {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 15px;
+        text-decoration: none;
+        color: #2c3e50;
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        /* Asegura que imagen y texto se organicen correctamente */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Empuja el footer o el nombre si es necesario */
+        text-align: center;
+        min-height: 100%; /* Ayuda a igualar la altura de las tarjetas en la cuadrícula */
+      }
+
+      .brand-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Contenedor de la imagen para control de altura */
+      .brand-logo {
+        width: 100%;
+        height: auto; /* Altura flexible */
+        margin-bottom: 10px;
+        display: flex; /* Centrado de imagen dentro del contenedor */
+        justify-content: center;
+        align-items: center;
+      }
+
+      .brand-img {
+        width: 100%;
+        max-height: 200px; /* Limita la altura de la imagen en tarjetas altas */
+        object-fit: contain; /* Asegura que la imagen se vea completa sin cortar */
+        border-radius: 8px;
+      }
+
+      .brand-description {
+        font-size: 0.95rem;
+        font-weight: 700; /* Asegura que el nombre sea legible */
+        margin-top: auto; /* Empuja el nombre al final si el contenido de arriba varía */
+        line-height: 1.3;
+      }
+
+      /* --- 6. FOOTER --- */
+      .footer {
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 20px;
+        border-top: 1px solid #ddd;
+        font-size: 0.8rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img
+          class="header-logo"
+          src="/public-img/beauty-of-joseon.png"
+          alt="Beauty of Joseon Logo"
+        />
+        <p class="subtitle-black">
+          Beauty of Joseon é uma marca de skincare coreana inspirada na estética
+          e nos princípios de cuidado da pele das mulheres da dinastia Joseon
+          (período histórico da Coreia que durou aproximadamente de 1300 a
+          1900). A marca mistura ingredientes tradicionais da medicina herbal
+          coreana (hanbang) com tecnologias modernas de cuidado da pele, criando
+          produtos eficazes, suaves e acessíveis.
+        </p>
+      </header>
+
+      <main class="brands-grid">
+        <a
+          href="revive-under-eye-patch-ginseng-retinal.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/revive-under-eye-patch-ginseng-retinal.webp"
+              alt="Revive Under Eye Patch: Ginseng + Retinal"
+            />
+          </div>
+          <p class="brand-description">
+            Revive Under Eye Patch: Ginseng + Retinal
+          </p>
+        </a>
+
+        <a href="daily-tinted-fluid-sunscreen.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/daily-tinted-fluid-sunscreen.webp"
+              alt="Daily Tinted Fluid Sunscreen"
+            />
+          </div>
+          <p class="brand-description">Daily Tinted Fluid Sunscreen</p>
+        </a>
+
+        <a href="relief-sun-rice-probiotics-spf50-pa.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/relief-sun-rice-probiotics-spf50-pa.webp"
+              alt="Relief Sun : Rice + Probiotics"
+            />
+          </div>
+          <p class="brand-description">
+            Relief Sun : Rice + Probiotics (SPF50+ PA++++)
+          </p>
+        </a>
+
+        <a
+          href="relief-sun-aqua-fresh-rice-b5-spf50-pa.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/relief-sun-aqua-fresh-rice-b5-spf50-pa.webp"
+              alt="Relief Sun Aqua-Fresh : Rice + B5"
+            />
+          </div>
+          <p class="brand-description">
+            Relief Sun Aqua-Fresh : Rice + B5 (SPF50+ PA++++)
+          </p>
+        </a>
+
+        <a href="ginseng-moist-sun-serum-spf-50-pa.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/ginseng-moist-sun-serum-spf-50-pa.webp"
+              alt="Ginseng Moist Sun Serum"
+            />
+          </div>
+          <p class="brand-description">
+            Ginseng Moist Sun Serum (SPF 50+ PA++++)
+          </p>
+        </a>
+
+        <a
+          href="matte-sun-stick-mugwort-camelia-spf-50-pa.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/matte-sun-stick-mugwort-camelia-spf-50-pa.webp"
+              alt="Matte Sun Stick : Mugwort+Camelia"
+            />
+          </div>
+          <p class="brand-description">
+            Matte Sun Stick : Mugwort+Camelia (SPF 50+ PA++++)
+          </p>
+        </a>
+
+        <a href="apricot-blossom-peeling-gel.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/apricot-blossom-peeling-gel.webp"
+              alt="Apricot Blossom Peeling Gel"
+            />
+          </div>
+          <p class="brand-description">Apricot Blossom Peeling Gel</p>
+        </a>
+
+        <a href="ginseng-essence-water.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/ginseng-essence-water.webp"
+              alt="Ginseng Essence Water"
+            />
+          </div>
+          <p class="brand-description">Ginseng Essence Water</p>
+        </a>
+
+        <a href="glow-deep-serum-rice-alpha-arbutin.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/glow-deep-serum-rice-alpha-arbutin.webp"
+              alt="Glow Deep Serum : Rice + Alpha-Arbutin"
+            />
+          </div>
+          <p class="brand-description">
+            Glow Deep Serum : Rice + Alpha-Arbutin
+          </p>
+        </a>
+
+        <a href="glow-serum-propolis-niacinamide.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/glow-serum-propolis-niacinamide.webp"
+              alt="Glow Serum : Propolis + Niacinamide"
+            />
+          </div>
+          <p class="brand-description">Glow Serum : Propolis + Niacinamide</p>
+        </a>
+
+        <a href="calming-serum-green-tea-panthenol.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/calming-serum-green-tea-panthenol.webp"
+              alt="Calming Serum: Green tea + Panthenol"
+            />
+          </div>
+          <p class="brand-description">Calming Serum: Green tea + Panthenol</p>
+        </a>
+
+        <a href="revive-serum-ginseng-snail-mucin.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/revive-serum-ginseng-snail-mucin.webp"
+              alt="Revive Serum : Ginseng + Snail Mucin"
+            />
+          </div>
+          <p class="brand-description">Revive Serum : Ginseng + Snail Mucin</p>
+        </a>
+
+        <a href="revive-eye-serum-ginseng-retinal.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/revive-eye-serum-ginseng-retinal.webp"
+              alt="Revive Eye Serum : Ginseng + Retinal"
+            />
+          </div>
+          <p class="brand-description">Revive Eye Serum : Ginseng + Retinal</p>
+        </a>
+
+        <a href="green-plum-refreshing-toner-aha-bha.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/green-plum-refreshing-toner-aha-bha.webp"
+              alt="Green Plum Refreshing Toner : AHA + BHA"
+            />
+          </div>
+          <p class="brand-description">
+            Green Plum Refreshing Toner : AHA + BHA
+          </p>
+        </a>
+
+        <a href="green-plum-refreshing-cleanser.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/green-plum-refreshing-cleanser.webp"
+              alt="Green Plum Refreshing Cleanser"
+            />
+          </div>
+          <p class="brand-description">Green Plum Refreshing Cleanser</p>
+        </a>
+
+        <a href="ginseng-cleansing-oil.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/ginseng-cleansing-oil.webp"
+              alt="Ginseng Cleansing Oil"
+            />
+          </div>
+          <p class="brand-description">Ginseng Cleansing Oil</p>
+        </a>
+
+        <a href="radiance-cleansing-balm.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/radiance-cleansing-balm.webp"
+              alt="Radiance Cleansing Balm"
+            />
+          </div>
+          <p class="brand-description">Radiance Cleansing Balm</p>
+        </a>
+
+        <a
+          href="low-ph-rice-face-and-body-cleansing-bar.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/low-ph-rice-face-and-body-cleansing-bar.webp"
+              alt="Low pH Rice Face and Body Cleansing Bar"
+            />
+          </div>
+          <p class="brand-description">
+            Low pH Rice Face and Body Cleansing Bar
+          </p>
+        </a>
+
+        <a href="red-bean-water-gel.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/red-bean-water-gel.webp"
+              alt="Red Bean Water Gel"
+            />
+          </div>
+          <p class="brand-description">Red Bean Water Gel</p>
+        </a>
+
+        <a href="red-bean-refreshing-pore-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/red-bean-refreshing-pore-mask.webp"
+              alt="Red Bean Refreshing Pore Mask"
+            />
+          </div>
+          <p class="brand-description">Red Bean Refreshing Pore Mask</p>
+        </a>
+
+        <a href="ground-rice-and-honey-glow-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/ground-rice-and-honey-glow-mask.webp"
+              alt="Ground Rice and Honey Glow Mask"
+            />
+          </div>
+          <p class="brand-description">Ground Rice and Honey Glow Mask</p>
+        </a>
+
+        <a href="glow-replenishing-rice-milk.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/glow-replenishing-rice-milk.webp"
+              alt="Glow Replenishing Rice Milk"
+            />
+          </div>
+          <p class="brand-description">Glow Replenishing Rice Milk</p>
+        </a>
+
+        <a
+          href="jelloskin-massage-cream-for-face-and-body.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/jelloskin-massage-cream-for-face-and-body.webp"
+              alt="JELLOSKIN Massage Cream"
+            />
+          </div>
+          <p class="brand-description">
+            JELLOSKIN Massage Cream For Face and Body
+          </p>
+        </a>
+
+        <a href="light-on-serum-centella-vita-c.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/light-on-serum-centella-vita-c.webp"
+              alt="Light On Serum : Centella + Vita C"
+            />
+          </div>
+          <p class="brand-description">Light On Serum : Centella + Vita C</p>
+        </a>
+
+        <a href="dynasty-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/dynasty-cream.webp"
+              alt="Dynasty Cream"
+            />
+          </div>
+          <p class="brand-description">Dynasty Cream</p>
+        </a>
+
+        <a href="hanbang-serum-discovery-kit.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/hanbang-serum-discovery-kit.webp"
+              alt="Hanbang Serum Discovery Kit"
+            />
+          </div>
+          <p class="brand-description">Hanbang Serum Discovery Kit</p>
+        </a>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2024 Product Catalogue. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
