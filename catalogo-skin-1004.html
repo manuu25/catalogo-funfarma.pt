@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin 1004 - Catálogo de Productos</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      property="og:image"
+      content="https://bolt.new/static/og_default.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://bolt.new/static/og_default.png"
+    />
+
+    <style>
+      /* --- 1. RESET Y BASE --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        line-height: 1.6;
+        color: #2c3e50;
+        background-color: #f8f9fa;
+        min-height: 100vh;
+      }
+
+      /* --- 2. LAYOUT PRINCIPAL (Responsivo) --- */
+      .container {
+        width: 100%;
+        max-width: 1200px; /* Ancho máximo para pantallas grandes */
+        margin: 0 auto;
+        padding: 20px; /* Padding interno para que el contenido no toque los bordes */
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Espacio entre secciones */
+      }
+
+      /* --- 3. ENCABEZADO Y TEXTO INTRODUCTORIO --- */
+      .header {
+        display: flex;
+        flex-direction: column; /* Apila logo y texto */
+        align-items: center;
+        text-align: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .header-logo {
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      .subtitle-black {
+        max-width: 800px;
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.5;
+        text-align: justify; /* Justificamos el texto para mejor lectura */
+      }
+
+      /* --- 4. CUADRÍCULA DE PRODUCTOS (GRID RESPONSIVO) --- */
+      .brands-grid {
+        display: grid;
+        /* La clave de la responsividad: crea tantas columnas como quepan (min 180px) */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 25px; /* Espacio uniforme entre tarjetas */
+      }
+
+      /* --- 5. TARJETA DE PRODUCTO (Organización y Contenido) --- */
+      .brand-card {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 15px;
+        text-decoration: none;
+        color: #2c3e50;
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        /* Asegura que imagen y texto se organicen correctamente */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Empuja el footer o el nombre si es necesario */
+        text-align: center;
+        min-height: 100%; /* Ayuda a igualar la altura de las tarjetas en la cuadrícula */
+      }
+
+      .brand-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Contenedor de la imagen para control de altura */
+      .brand-logo {
+        width: 100%;
+        height: auto; /* Altura flexible */
+        margin-bottom: 10px;
+        display: flex; /* Centrado de imagen dentro del contenedor */
+        justify-content: center;
+        align-items: center;
+      }
+
+      .brand-img {
+        width: 100%;
+        max-height: 200px; /* Limita la altura de la imagen en tarjetas altas */
+        object-fit: contain; /* Asegura que la imagen se vea completa sin cortar */
+        border-radius: 8px;
+      }
+
+      .brand-description {
+        font-size: 0.95rem;
+        font-weight: 700; /* Asegura que el nombre sea legible */
+        margin-top: auto; /* Empuja el nombre al final si el contenido de arriba varía */
+        line-height: 1.3;
+      }
+
+      /* --- 6. FOOTER --- */
+      .footer {
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 20px;
+        border-top: 1px solid #ddd;
+        font-size: 0.8rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img
+          class="header-logo"
+          src="/public-img/skin-1004.png"
+          alt="Skin 1004 Logo"
+        />
+        <p class="subtitle-black">
+          SKIN1004 é uma marca de skincare coreana conhecida por sua filosofia
+          de “clean beauty” e pelo uso de ingredientes naturais, com destaque
+          para a Centella Asiatica cultivada em Madagascar. A marca combina
+          pureza, minimalismo e ciência moderna para formular produtos eficazes,
+          suaves e adequados até para peles sensíveis.
+        </p>
+      </header>
+
+      <main class="brands-grid">
+        <a href="/skin-1004/centella-ampoule.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/centella-ampoule.webp"
+              alt="Centella Ampoule"
+            />
+          </div>
+          <p class="brand-description">Centella Ampoule</p>
+        </a>
+
+        <a href="/skin-1004/centella-ampoule-foam.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/centella-ampoule-foam.webp"
+              alt="Centella Ampoule Foam"
+            />
+          </div>
+          <p class="brand-description">Centella Ampoule Foam</p>
+        </a>
+
+        <a href="/skin-1004/centella-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/centella-cream.webp"
+              alt="Centella Cream"
+            />
+          </div>
+          <p class="brand-description">Centella Cream</p>
+        </a>
+
+        <a href="/skin-1004/hyalu-cica-blue-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/hyalu-cica-blue-serum.webp"
+              alt="Hyalu-Cica Blue Serum"
+            />
+          </div>
+          <p class="brand-description">Hyalu-Cica Blue Serum</p>
+        </a>
+
+        <a
+          href="/skin-1004/hyalu-cica-brightening-toner.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/hyalu-cica-brightening-toner.webp"
+              alt="Hyalu-Cica Brightening Toner"
+            />
+          </div>
+          <p class="brand-description">Hyalu-Cica Brightening Toner</p>
+        </a>
+
+        <a href="/skin-1004/hyalu-cica-cloudy-mist.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/hyalu-cica-cloudy-mist.webp"
+              alt="Hyalu-Cica Cloudy Mist"
+            />
+          </div>
+          <p class="brand-description">Hyalu-Cica Cloudy Mist</p>
+        </a>
+
+        <a href="/skin-1004/hyalu-cica-sleeping-pack.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/hyalu-cica-sleeping-pack.webp"
+              alt="Hyalu-Cica Sleeping Pack"
+            />
+          </div>
+          <p class="brand-description">Hyalu-Cica Sleeping Pack</p>
+        </a>
+
+        <a
+          href="/skin-1004/centella-light-cleansing-oil.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/centella-light-cleansing-oil.webp"
+              alt="Centella Light Cleansing Oil"
+            />
+          </div>
+          <p class="brand-description">Centella Light Cleansing Oil</p>
+        </a>
+
+        <a href="/skin-1004/centella-quick-calming-pad.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/centella-quick-calming-pad.webp"
+              alt="Centella Quick Calming Pad"
+            />
+          </div>
+          <p class="brand-description">Centella Quick Calming Pad</p>
+        </a>
+
+        <a href="/skin-1004/centella-soothing-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/centella-soothing-cream.webp"
+              alt="Centella Soothing Cream"
+            />
+          </div>
+          <p class="brand-description">Centella Soothing Cream</p>
+        </a>
+
+        <a
+          href="/skin-1004/tone-brightening-boosting-toner.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/tone-brightening-boosting-toner.webp"
+              alt="Tone Brightening Boosting Toner"
+            />
+          </div>
+          <p class="brand-description">Tone Brightening Boosting Toner</p>
+        </a>
+
+        <a
+          href="/skin-1004/tone-brightening-capsule-ampoule.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/tone-brightening-capsule-ampoule.webp"
+              alt="Tone Brightening Capsule Ampoule"
+            />
+          </div>
+          <p class="brand-description">Tone Brightening Capsule Ampoule</p>
+        </a>
+
+        <a
+          href="/skin-1004/tone-brightening-cleansing-gel-foam.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/tone-brightening-cleansing-gel-foam.webp"
+              alt="Tone Brightening Cleansing Gel Foam"
+            />
+          </div>
+          <p class="brand-description">Tone Brightening Cleansing Gel Foam</p>
+        </a>
+
+        <a href="/skin-1004/centella-toning-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/centella-toning-toner.webp"
+              alt="Centella Toning Toner"
+            />
+          </div>
+          <p class="brand-description">Centella Toning Toner</p>
+        </a>
+
+        <a
+          href="/skin-1004/centella-watergel-sheet-ampoule-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/centella-watergel-sheet-ampoule-mask.webp"
+              alt="Centella Watergel Sheet Ampoule Mask"
+            />
+          </div>
+          <p class="brand-description">Centella Watergel Sheet Ampoule Mask</p>
+        </a>
+
+        <a href="/skin-1004/tea-trica-relief-ampoule.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/tea-trica-relief-ampoule.webp"
+              alt="Tea-Trica Relief Ampoule"
+            />
+          </div>
+          <p class="brand-description">Tea-Trica Relief Ampoule</p>
+        </a>
+
+        <a href="/skin-1004/tea-trica-purifying-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/tea-trica-purifying-toner.webp"
+              alt="Tea-Trica Purifying Toner"
+            />
+          </div>
+          <p class="brand-description">Tea-Trica Purifying Toner</p>
+        </a>
+
+        <a href="/skin-1004/poremizing-fresh-ampoule.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/poremizing-fresh-ampoule.webp"
+              alt="Poremizing Fresh Ampoule"
+            />
+          </div>
+          <p class="brand-description">Poremizing Fresh Ampoule</p>
+        </a>
+
+        <a href="/skin-1004/poremizing-clear-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/poremizing-clear-toner.webp"
+              alt="Poremizing Clear Toner"
+            />
+          </div>
+          <p class="brand-description">Poremizing Clear Toner</p>
+        </a>
+
+        <a href="/skin-1004/tea-trica-spot-cover-patch.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/tea-trica-spot-cover-patch.webp"
+              alt="Tea-Trica Spot Cover Patch"
+            />
+          </div>
+          <p class="brand-description">Tea-Trica Spot Cover Patch</p>
+        </a>
+
+        <a href="/skin-1004/hyalu-cica-first-ampoule.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/hyalu-cica-first-ampoule.webp"
+              alt="Hyalu-Cica First Ampoule"
+            />
+          </div>
+          <p class="brand-description">Hyalu-Cica First Ampoule</p>
+        </a>
+
+        <a href="/skin-1004/hyalu-cica-moisture-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/hyalu-cica-moisture-cream.webp"
+              alt="Hyalu-Cica Moisture Cream"
+            />
+          </div>
+          <p class="brand-description">Hyalu-Cica Moisture Cream</p>
+        </a>
+
+        <a
+          href="/skin-1004/tone-brightening-capsule-cream.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/tone-brightening-capsule-cream.webp"
+              alt="Tone Brightening Capsule Cream"
+            />
+          </div>
+          <p class="brand-description">Tone Brightening Capsule Cream</p>
+        </a>
+
+        <a href="/skin-1004/tea-trica-bha-foam.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/tea-trica-bha-foam.webp"
+              alt="Tea-Trica BHA Foam"
+            />
+          </div>
+          <p class="brand-description">Tea-Trica BHA Foam</p>
+        </a>
+
+        <a href="/skin-1004/poremizing-light-gel-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/poremizing-light-gel-cream.webp"
+              alt="Poremizing Light Gel Cream"
+            />
+          </div>
+          <p class="brand-description">Poremizing Light Gel Cream</p>
+        </a>
+
+        <a
+          href="/skin-1004/poremizing-deep-cleansing-foam.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/poremizing-deep-cleansing-foam.webp"
+              alt="Poremizing Deep Cleansing Foam"
+            />
+          </div>
+          <p class="brand-description">Poremizing Deep Cleansing Foam</p>
+        </a>
+
+        <a
+          href="/skin-1004/probio-cica-bakuchiol-eye-cream.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/probio-cica-bakuchiol-eye-cream.webp"
+              alt="Probio-Cica Bakuchiol Eye Cream"
+            />
+          </div>
+          <p class="brand-description">Probio-Cica Bakuchiol Eye Cream</p>
+        </a>
+
+        <a href="/skin-1004/probio-cica-essence-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/probio-cica-essence-toner.webp"
+              alt="Probio-Cica Essence Toner"
+            />
+          </div>
+          <p class="brand-description">Probio-Cica Essence Toner</p>
+        </a>
+
+        <a
+          href="/skin-1004/probio-cica-intensive-ampoule.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/probio-cica-intensive-ampoule.webp"
+              alt="Probio-Cica Intensive Ampoule"
+            />
+          </div>
+          <p class="brand-description">Probio-Cica Intensive Ampoule</p>
+        </a>
+
+        <a href="/skin-1004/probio-cica-enrich-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/probio-cica-enrich-cream.webp"
+              alt="Probio-Cica Enrich Cream"
+            />
+          </div>
+          <p class="brand-description">Probio-Cica Enrich Cream</p>
+        </a>
+
+        <a href="/skin-1004/tea-trica-b5-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/tea-trica-b5-cream.webp"
+              alt="Tea-Trica B5 Cream"
+            />
+          </div>
+          <p class="brand-description">Tea-Trica B5 Cream</p>
+        </a>
+
+        <a
+          href="/skin-1004/poremizing-quick-clay-stick-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/poremizing-quick-clay-stick-mask.webp"
+              alt="Poremizing Quick Clay Stick Mask"
+            />
+          </div>
+          <p class="brand-description">Poremizing Quick Clay Stick Mask</p>
+        </a>
+
+        <a href="/skin-1004/tea-trica-spot-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/tea-trica-spot-cream.webp"
+              alt="Tea-Trica Spot Cream"
+            />
+          </div>
+          <p class="brand-description">Tea-Trica Spot Cream</p>
+        </a>
+
+        <a href="/skin-1004/poremizing-clarifying-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/poremizing-clarifying-mask.webp"
+              alt="Poremizing Clarifying Mask"
+            />
+          </div>
+          <p class="brand-description">Poremizing Clarifying Mask</p>
+        </a>
+
+        <a href="/skin-1004/tone-brightening-glow-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/tone-brightening-glow-mask.webp"
+              alt="Tone Brightening Glow Mask"
+            />
+          </div>
+          <p class="brand-description">Tone Brightening Glow Mask</p>
+        </a>
+
+        <a href="/skin-1004/hyalu-cica-hydrating-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/hyalu-cica-hydrating-mask.webp"
+              alt="Hyalu-Cica Hydrating Mask"
+            />
+          </div>
+          <p class="brand-description">Hyalu-Cica Hydrating Mask</p>
+        </a>
+
+        <a href="/skin-1004/tea-trica-relaxing-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/tea-trica-relaxing-mask.webp"
+              alt="Tea-Trica Relaxing Mask"
+            />
+          </div>
+          <p class="brand-description">Tea-Trica Relaxing Mask</p>
+        </a>
+
+        <a
+          href="/skin-1004/probio-cica-nourishing-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/probio-cica-nourishing-mask.webp"
+              alt="Probio-Cica Nourishing Mask"
+            />
+          </div>
+          <p class="brand-description">Probio-Cica Nourishing Mask</p>
+        </a>
+
+        <a
+          href="/skin-1004/hyalu-cica-water-fit-sun-serum-uv.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/skin-1004-img/hyalu-cica-water-fit-sun-serum-uv.webp"
+              alt="Hyalu-Cica Water-Fit Sun Serum UV"
+            />
+          </div>
+          <p class="brand-description">Hyalu-Cica Water-Fit Sun Serum UV</p>
+        </a>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2024 Product Catalogue. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
