@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Round Lab - Catálogo de Produtos</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      property="og:image"
+      content="https://bolt.new/static/og_default.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://bolt.new/static/og_default.png"
+    />
+
+    <style>
+      /* --- 1. RESET Y BASE --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        line-height: 1.6;
+        color: #2c3e50;
+        background-color: #f8f9fa;
+        min-height: 100vh;
+      }
+
+      /* --- 2. LAYOUT PRINCIPAL (Responsivo) --- */
+      .container {
+        width: 100%;
+        max-width: 1200px; /* Ancho máximo para pantallas grandes */
+        margin: 0 auto;
+        padding: 20px; /* Padding interno para que el contenido no toque los bordes */
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Espacio entre secciones */
+      }
+
+      /* --- 3. ENCABEZADO Y TEXTO INTRODUCTORIO --- */
+      .header {
+        display: flex;
+        flex-direction: column; /* Apila logo y texto */
+        align-items: center;
+        text-align: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .header-logo {
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      .subtitle-black {
+        max-width: 800px;
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.5;
+        text-align: justify; /* Justificamos el texto para mejor lectura */
+      }
+
+      /* --- 4. CUADRÍCULA DE PRODUCTOS (GRID RESPONSIVO) --- */
+      .brands-grid {
+        display: grid;
+        /* La clave de la responsividad: crea tantas columnas como quepan (min 180px) */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 25px; /* Espacio uniforme entre tarjetas */
+      }
+
+      /* --- 5. TARJETA DE PRODUCTO (Organización y Contenido) --- */
+      .brand-card {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 15px;
+        text-decoration: none;
+        color: #2c3e50;
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        /* Asegura que imagen y texto se organicen correctamente */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Empuja el footer o el nombre si es necesario */
+        text-align: center;
+        min-height: 100%; /* Ayuda a igualar la altura de las tarjetas en la cuadrícula */
+      }
+
+      .brand-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Contenedor de la imagen para control de altura */
+      .brand-logo {
+        width: 100%;
+        height: auto; /* Altura flexible */
+        margin-bottom: 10px;
+        display: flex; /* Centrado de imagen dentro del contenedor */
+        justify-content: center;
+        align-items: center;
+      }
+
+      .brand-img {
+        width: 100%;
+        max-height: 200px; /* Limita la altura de la imagen en tarjetas altas */
+        object-fit: contain; /* Asegura que la imagen se vea completa sin cortar */
+        border-radius: 8px;
+      }
+
+      .brand-description {
+        font-size: 0.95rem;
+        font-weight: 700; /* Asegura que el nombre sea legible */
+        margin-top: auto; /* Empuja el nombre al final si el contenido de arriba varía */
+        line-height: 1.3;
+      }
+
+      /* --- 6. FOOTER --- */
+      .footer {
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 20px;
+        border-top: 1px solid #ddd;
+        font-size: 0.8rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img
+          class="header-logo"
+          src="/public-img/round-lab.png"
+          alt="Round Lab Logo"
+        />
+        <p class="subtitle-black">
+          A Round Lab é uma marca de skincare sul-coreana conhecida por criar
+          [cite_start]produtos suaves, minimalistas e altamente eficazes[cite:
+          2]. Fundada com o propósito de cuidar da pele sensível e fatigada, a
+          marca utiliza fórmulas limpas e ingredientes de origem natural,
+          inspirados nas [cite_start]paisagens da Coreia do Sul.
+        </p>
+      </header>
+
+      <main class="brands-grid">
+        <a href="/round-lab/1025-dokdo-cleanser.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/1025-dokdo-cleanser.webp"
+              alt="1025 Dokdo Cleanser"
+            />
+          </div>
+          <p class="brand-description">1025 Dokdo Cleanser</p>
+        </a>
+
+        <a href="/round-lab/1025-dokdo-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/1025-dokdo-toner.webp"
+              alt="1025 Dokdo Toner"
+            />
+          </div>
+          <p class="brand-description">1025 Dokdo Toner</p>
+        </a>
+
+        <a href="/round-lab/1025-dokdo-cleansing-oil.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/1025-dokdo-cleansing-oil.webp"
+              alt="1025 Dokdo Cleansing Oil"
+            />
+          </div>
+          <p class="brand-description">1025 Dokdo Cleansing Oil</p>
+        </a>
+
+        <a href="/round-lab/1025-dokdo-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/1025-dokdo-cream.webp"
+              alt="1025 Dokdo Cream"
+            />
+          </div>
+          <p class="brand-description">1025 Dokdo Cream</p>
+        </a>
+
+        <a href="/round-lab/1025-dokdo-lotion.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/1025-dokdo-lotion.webp"
+              alt="1025 Dokdo Lotion"
+            />
+          </div>
+          <p class="brand-description">1025 Dokdo Lotion</p>
+        </a>
+
+        <a href="/round-lab/1025-dokdo-toner-pad.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/1025-dokdo-toner-pad.webp"
+              alt="1025 Dokdo Toner Pad"
+            />
+          </div>
+          <p class="brand-description">1025 Dokdo Toner Pad</p>
+        </a>
+
+        <a href="/round-lab/dokdo-cleansing-water.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/dokdo-cleansing-water.webp"
+              alt="Dokdo Cleansing Water"
+            />
+          </div>
+          <p class="brand-description">Dokdo Cleansing Water</p>
+        </a>
+
+        <a
+          href="/round-lab/1025-dokdo-water-gel-mask-sheet.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/1025-dokdo-water-gel-mask-sheet.webp"
+              alt="1025 Dokdo Water Gel Mask Sheet"
+            />
+          </div>
+          <p class="brand-description">1025 Dokdo Water Gel Mask Sheet</p>
+        </a>
+
+        <a href="/round-lab/1025-dokdo-ampoule.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/1025-dokdo-ampoule.webp"
+              alt="1025 Dokdo Ampoule"
+            />
+          </div>
+          <p class="brand-description">1025 Dokdo Ampoule</p>
+        </a>
+
+        <a href="/round-lab/1025-dokdo-peeling-gel.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/1025-dokdo-peeling-gel.webp"
+              alt="1025 Dokdo Peeling Gel"
+            />
+          </div>
+          <p class="brand-description">1025 Dokdo Peeling Gel</p>
+        </a>
+
+        <a href="/round-lab/1025-dokdo-cleansing-balm.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/1025-dokdo-cleansing-balm.webp"
+              alt="1025 Dokdo Cleansing Balm"
+            />
+          </div>
+          <p class="brand-description">1025 Dokdo Cleansing Balm</p>
+        </a>
+
+        <a href="/round-lab/1025-dokdo-cleansing-gel.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/1025-dokdo-cleansing-gel.webp"
+              alt="1025 Dokdo Cleansing Gel"
+            />
+          </div>
+          <p class="brand-description">1025 Dokdo Cleansing Gel</p>
+        </a>
+
+        <a href="/round-lab/birch-moisturizing-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-moisturizing-cream.webp"
+              alt="Birch Moisturizing Cream"
+            />
+          </div>
+          <p class="brand-description">Birch Moisturizing Cream</p>
+        </a>
+
+        <a
+          href="/round-lab/birch-moisturizing-cleanser.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-moisturizing-cleanser.webp"
+              alt="Birch Moisturizing Cleanser"
+            />
+          </div>
+          <p class="brand-description">Birch Moisturizing Cleanser</p>
+        </a>
+
+        <a href="/round-lab/birch-moisturizing-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-moisturizing-serum.webp"
+              alt="Birch Moisturizing Serum"
+            />
+          </div>
+          <p class="brand-description">Birch Moisturizing Serum</p>
+        </a>
+
+        <a
+          href="/round-lab/birch-moisturizing-toner-pad.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-moisturizing-toner-pad.webp"
+              alt="Birch Moisturizing Toner Pad"
+            />
+          </div>
+          <p class="brand-description">Birch Moisturizing Toner Pad</p>
+        </a>
+
+        <a
+          href="/round-lab/birch-moisturizing-sheet-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-moisturizing-sheet-mask.webp"
+              alt="Birch Moisturizing Sheet Mask"
+            />
+          </div>
+          <p class="brand-description">Birch Moisturizing Sheet Mask</p>
+        </a>
+
+        <a
+          href="/round-lab/birch-moisturizing-wash-off-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-moisturizing-wash-off-mask.webp"
+              alt="Birch Moisturizing Wash Off Mask"
+            />
+          </div>
+          <p class="brand-description">Birch Moisturizing Wash Off Mask</p>
+        </a>
+
+        <a
+          href="/round-lab/birch-juice-moisturizing-ampoule.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-juice-moisturizing-ampoule.webp"
+              alt="Birch Juice Moisturizing Ampoule"
+            />
+          </div>
+          <p class="brand-description">Birch Juice Moisturizing Ampoule</p>
+        </a>
+
+        <a href="/round-lab/birch-juice-cleansing-pad.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-juice-cleansing-pad.webp"
+              alt="Birch Juice Cleansing Pad"
+            />
+          </div>
+          <p class="brand-description">Birch Juice Cleansing Pad</p>
+        </a>
+
+        <a
+          href="/round-lab/birch-moisturizing-soothing-gel.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-moisturizing-soothing-gel.webp"
+              alt="Birch Moisturizing Soothing Gel"
+            />
+          </div>
+          <p class="brand-description">Birch Moisturizing Soothing Gel</p>
+        </a>
+
+        <a
+          href="/round-lab/birch-moisturizing-lip-balm-set.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-moisturizing-lip-balm-set.webp"
+              alt="Birch Moisturizing Lip Balm Set"
+            />
+          </div>
+          <p class="brand-description">
+            Birch Moisturizing Lip Balm + Silicone Brush Set
+          </p>
+        </a>
+
+        <a
+          href="/round-lab/birch-mild-up-sunscreen-uvlock-spf-50.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-mild-up-sunscreen-uvlock-spf-50.webp"
+              alt="Birch Mild-Up Sunscreen UVLock SPF 50+"
+            />
+          </div>
+          <p class="brand-description">
+            Birch Mild-Up Sunscreen UVLock SPF 50+
+          </p>
+        </a>
+
+        <a
+          href="/round-lab/birch-moisturizing-sunscreen-uvlock-spf-45.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-moisturizing-sunscreen-uvlock-spf-45.webp"
+              alt="Birch Moisturizing Sunscreen UVLock SPF 45+"
+            />
+          </div>
+          <p class="brand-description">
+            Birch Moisturizing Sunscreen UVLock SPF 45+
+          </p>
+        </a>
+
+        <a
+          href="/round-lab/birch-moisturizing-sun-cushion-spf-50.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-moisturizing-sun-cushion-spf-50.webp"
+              alt="Birch Moisturizing Sun Cushion SPF 50+"
+            />
+          </div>
+          <p class="brand-description">
+            Birch Moisturizing Sun Cushion SPF 50+
+          </p>
+        </a>
+
+        <a
+          href="/round-lab/birch-moisturizing-sun-stick-spf-50.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/birch-moisturizing-sun-stick-spf-50.webp"
+              alt="Birch Moisturizing Sun Stick SPF 50+"
+            />
+          </div>
+          <p class="brand-description">Birch Moisturizing Sun Stick SPF 50+</p>
+        </a>
+
+        <a href="/round-lab/mugwort-calming-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/mugwort-calming-cream.webp"
+              alt="Mugwort Calming Cream"
+            />
+          </div>
+          <p class="brand-description">Mugwort Calming Cream</p>
+        </a>
+
+        <a href="/round-lab/mugwort-calming-cleanser.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/mugwort-calming-cleanser.webp"
+              alt="Mugwort Calming Cleanser"
+            />
+          </div>
+          <p class="brand-description">Mugwort Calming Cleanser</p>
+        </a>
+
+        <a href="/round-lab/mugwort-calming-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/mugwort-calming-serum.webp"
+              alt="Mugwort Calming Serum"
+            />
+          </div>
+          <p class="brand-description">Mugwort Calming Serum</p>
+        </a>
+
+        <a href="/round-lab/mugwort-calming-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/mugwort-calming-toner.webp"
+              alt="Mugwort Calming Toner"
+            />
+          </div>
+          <p class="brand-description">Mugwort Calming Toner</p>
+        </a>
+
+        <a href="/round-lab/mugwort-calming-sheet-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/mugwort-calming-sheet-mask.webp"
+              alt="Mugwort Calming Sheet Mask"
+            />
+          </div>
+          <p class="brand-description">Mugwort Calming Sheet Mask</p>
+        </a>
+
+        <a href="/round-lab/soybean-nourishing-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/soybean-nourishing-toner.webp"
+              alt="Soybean Nourishing Toner"
+            />
+          </div>
+          <p class="brand-description">Soybean Nourishing Toner</p>
+        </a>
+
+        <a href="/round-lab/soybean-nourishing-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/soybean-nourishing-cream.webp"
+              alt="Soybean Nourishing Cream"
+            />
+          </div>
+          <p class="brand-description">Soybean Nourishing Cream</p>
+        </a>
+
+        <a href="/round-lab/soybean-nourishing-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/soybean-nourishing-serum.webp"
+              alt="Soybean Nourishing Serum"
+            />
+          </div>
+          <p class="brand-description">Soybean Nourishing Serum</p>
+        </a>
+
+        <a
+          href="/round-lab/soybean-nourishing-cleanser.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/soybean-nourishing-cleanser.webp"
+              alt="Soybean Nourishing Cleanser"
+            />
+          </div>
+          <p class="brand-description">Soybean Nourishing Cleanser</p>
+        </a>
+
+        <a
+          href="/round-lab/soybean-nourishing-cleansing-oil.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/soybean-nourishing-cleansing-oil.webp"
+              alt="Soybean Nourishing Cleansing Oil"
+            />
+          </div>
+          <p class="brand-description">Soybean Nourishing Cleansing Oil</p>
+        </a>
+
+        <a
+          href="/round-lab/soybean-nourishing-sheet-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/soybean-nourishing-sheet-mask.webp"
+              alt="Soybean Nourishing Sheet Mask"
+            />
+          </div>
+          <p class="brand-description">Soybean Nourishing Sheet Mask</p>
+        </a>
+
+        <a href="/round-lab/soybean-panthenol-ampoule.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/soybean-panthenol-ampoule.webp"
+              alt="Soybean Panthenol Ampoule"
+            />
+          </div>
+          <p class="brand-description">Soybean Panthenol Ampoule</p>
+        </a>
+
+        <a href="/round-lab/soybean-panthenol-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/soybean-panthenol-cream.webp"
+              alt="Soybean Panthenol Cream"
+            />
+          </div>
+          <p class="brand-description">Soybean Panthenol Cream</p>
+        </a>
+
+        <a href="/round-lab/soybean-panthenol-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/soybean-panthenol-toner.webp"
+              alt="Soybean Panthenol Toner"
+            />
+          </div>
+          <p class="brand-description">Soybean Panthenol Toner</p>
+        </a>
+
+        <a href="/round-lab/soybean-panthenol-cleanser.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/soybean-panthenol-cleanser.webp"
+              alt="Soybean Panthenol Cleanser"
+            />
+          </div>
+          <p class="brand-description">Soybean Panthenol Cleanser</p>
+        </a>
+
+        <a
+          href="/round-lab/soybean-panthenol-cleansing-oil.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/soybean-panthenol-cleansing-oil.webp"
+              alt="Soybean Panthenol Cleansing Oil"
+            />
+          </div>
+          <p class="brand-description">Soybean Panthenol Cleansing Oil</p>
+        </a>
+
+        <a
+          href="/round-lab/soybean-panthenol-sheet-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/soybean-panthenol-sheet-mask.webp"
+              alt="Soybean Panthenol Sheet Mask"
+            />
+          </div>
+          <p class="brand-description">Soybean Panthenol Sheet Mask</p>
+        </a>
+
+        <a href="/round-lab/pine-calming-cica-ampoule.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/pine-calming-cica-ampoule.webp"
+              alt="Pine Calming Cica Ampoule"
+            />
+          </div>
+          <p class="brand-description">Pine Calming Cica Ampoule</p>
+        </a>
+
+        <a
+          href="/round-lab/pine-calming-cica-toner-pad.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/pine-calming-cica-toner-pad.webp"
+              alt="Pine Calming Cica Toner Pad"
+            />
+          </div>
+          <p class="brand-description">Pine Calming Cica Toner Pad</p>
+        </a>
+
+        <a href="/round-lab/pine-calming-cica-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/pine-calming-cica-cream.webp"
+              alt="Pine Calming Cica Cream"
+            />
+          </div>
+          <p class="brand-description">Pine Calming Cica Cream</p>
+        </a>
+
+        <a href="/round-lab/pine-calming-cica-lotion.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/pine-calming-cica-lotion.webp"
+              alt="Pine Calming Cica Lotion"
+            />
+          </div>
+          <p class="brand-description">Pine Calming Cica Lotion</p>
+        </a>
+
+        <a href="/round-lab/pine-calming-cica-cleanser.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/pine-calming-cica-cleanser.webp"
+              alt="Pine Calming Cica Cleanser"
+            />
+          </div>
+          <p class="brand-description">Pine Calming Cica Cleanser</p>
+        </a>
+
+        <a href="/round-lab/pine-calming-cica-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/pine-calming-cica-toner.jpg"
+              alt="Pine Calming Cica Toner"
+            />
+          </div>
+          <p class="brand-description">Pine Calming Cica Toner</p>
+        </a>
+
+        <a
+          href="/round-lab/pine-calming-cica-sheet-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/pine-calming-cica-sheet-mask.webp"
+              alt="Pine Calming Cica Sheet Mask"
+            />
+          </div>
+          <p class="brand-description">Pine Calming Cica Sheet Mask</p>
+        </a>
+
+        <a
+          href="/round-lab/pine-calming-cica-body-wash.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/pine-calming-cica-body-wash.webp"
+              alt="Pine Calming Cica Body Wash"
+            />
+          </div>
+          <p class="brand-description">Pine Calming Cica Body Wash</p>
+        </a>
+
+        <a
+          href="/round-lab/vita-niacinamide-dark-spot-cream.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/vita-niacinamide-dark-spot-cream.webp"
+              alt="Vita Niacinamide Dark Spot Cream"
+            />
+          </div>
+          <p class="brand-description">Vita Niacinamide Dark Spot Cream</p>
+        </a>
+
+        <a
+          href="/round-lab/vita-niacinamide-dark-spot-serum.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/vita-niacinamide-dark-spot-serum.webp"
+              alt="Vita Niacinamide Dark Spot Serum"
+            />
+          </div>
+          <p class="brand-description">Vita Niacinamide Dark Spot Serum</p>
+        </a>
+
+        <a
+          href="/round-lab/vita-niacinamide-dark-spot-serum-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/vita-niacinamide-dark-spot-serum-mask.webp"
+              alt="Vita Niacinamide Dark Spot Serum Mask"
+            />
+          </div>
+          <p class="brand-description">Vita Niacinamide Dark Spot Serum Mask</p>
+        </a>
+
+        <a
+          href="/round-lab/camellia-deep-collagen-firming-gel-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/camellia-deep-collagen-firming-gel-mask.webp"
+              alt="Camellia Deep Collagen Firming Gel Mask"
+            />
+          </div>
+          <p class="brand-description">
+            Camellia Deep Collagen Firming Gel Mask
+          </p>
+        </a>
+
+        <a
+          href="/round-lab/camellia-deep-collagen-firming-ampoule.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/camellia-deep-collagen-firming-ampoule.webp"
+              alt="Camellia Deep Collagen Firming Ampoule"
+            />
+          </div>
+          <p class="brand-description">
+            Camellia Deep Collagen Firming Ampoule
+          </p>
+        </a>
+
+        <a
+          href="/round-lab/camellia-deep-collagen-firming-cream.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/camellia-deep-collagen-firming-cream.webp"
+              alt="Camellia Deep Collagen Firming Cream"
+            />
+          </div>
+          <p class="brand-description">Camellia Deep Collagen Firming Cream</p>
+        </a>
+
+        <a
+          href="/round-lab/camellia-deep-collagen-jelly-mask-cleanser.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/round-lab-img/camellia-deep-collagen-jelly-mask-cleanser.webp"
+              alt="Camellia Deep Collagen Jelly Mask Cleanser"
+            />
+          </div>
+          <p class="brand-description">
+            Camellia Deep Collagen Jelly Mask Cleanser
+          </p>
+        </a>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2024 Product Catalogue. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
