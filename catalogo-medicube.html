@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medicube - Catálogo de Produtos</title>
+    <style>
+      /* --- 1. RESET Y BASE --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        line-height: 1.6;
+        color: #2c3e50;
+        background-color: #f8f9fa;
+        min-height: 100vh;
+      }
+
+      /* --- 2. LAYOUT PRINCIPAL (Responsivo) --- */
+      .container {
+        width: 100%;
+        max-width: 1200px; /* Largura máxima para telas grandes */
+        margin: 0 auto;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      /* --- 3. ENCABEZADO Y TEXTO INTRODUCTORIO --- */
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .brand-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Caso tenha um logo, pode usar esta classe em vez do texto */
+      .header-logo {
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      .subtitle-black {
+        max-width: 800px;
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.6;
+        text-align: justify;
+      }
+
+      /* --- 4. CUADRÍCULA DE PRODUCTOS (GRID RESPONSIVO) --- */
+      .brands-grid {
+        display: grid;
+        /* Cria colunas responsivas (min 180px) */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 25px;
+      }
+
+      /* --- 5. TARJETA DE PRODUCTO --- */
+      .brand-card {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 15px;
+        text-decoration: none;
+        color: #2c3e50;
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        min-height: 100%;
+      }
+
+      .brand-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-color: #bdc3c7;
+      }
+
+      .brand-logo {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .brand-img {
+        width: 100%;
+        max-height: 200px;
+        object-fit: contain;
+      }
+
+      .brand-description {
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-top: auto;
+        line-height: 1.3;
+      }
+
+      /* --- 6. FOOTER --- */
+      .footer {
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 20px;
+        border-top: 1px solid #ddd;
+        font-size: 0.8rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img
+          class="header-logo"
+          src="/public-img/medicube-img/logo-medicube.svg"
+          alt="Round Lab Logo"
+        />
+        <p class="subtitle-black">
+          A Medicube é uma marca de skincare e tecnologia de beleza da Coreia do
+          Sul, conhecida por criar produtos dermatologicamente desenvolvidos e
+          especialmente formulados para pele com acne, poros dilatados e textura
+          irregular. Diferente de muitas marcas focadas apenas em cosméticos, a
+          Medicube combina dermocosméticos com dispositivos tecnológicos
+          caseiros, trazendo resultados próximos aos de clínicas.
+        </p>
+      </header>
+
+      <main class="brands-grid">
+        <a href="/medicube/pdrn-pink-peptide-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-pink-peptide-toner.jpg"
+              alt="PDRN Pink Peptide Toner"
+            />
+          </div>
+          <p class="brand-description">PDRN Pink Peptide Toner</p>
+        </a>
+
+        <a href="/medicube/pdrn-pink-peptide-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-pink-peptide-cream.avif"
+              alt="PDRN Pink Peptide Cream"
+            />
+          </div>
+          <p class="brand-description">PDRN Pink Peptide Cream</p>
+        </a>
+
+        <a
+          href="/medicube/pdrn-pink-collagen-capsule-cream.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-pink-collagen-capsule-cream.avif"
+              alt="PDRN Pink Collagen Capsule Cream"
+            />
+          </div>
+          <p class="brand-description">PDRN Pink Collagen Capsule Cream</p>
+        </a>
+
+        <a
+          href="/medicube/pdrn-pink-collagen-exosome-shot.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-pink-collagen-exosome-shot.avif"
+              alt="PDRN Pink Collagen Exosome Shot"
+            />
+          </div>
+          <p class="brand-description">PDRN Pink Collagen Exosome Shot</p>
+        </a>
+
+        <a href="/medicube/pdrn-pink-one-day-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-pink-one-day-serum.webp"
+              alt="PDRN Pink One Day Serum"
+            />
+          </div>
+          <p class="brand-description">PDRN Pink One Day Serum</p>
+        </a>
+
+        <a href="/medicube/pdrn-pink-gel-cleanser.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-pink-gel-cleanser.jpg"
+              alt="PDRN Pink Gel Cleanser"
+            />
+          </div>
+          <p class="brand-description">PDRN Pink Gel Cleanser</p>
+        </a>
+
+        <a href="/medicube/pdrn-pink-whip-cleanser.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-pink-whip-cleanser.webp"
+              alt="PDRN Pink Whip Cleanser"
+            />
+          </div>
+          <p class="brand-description">PDRN Pink Whip Cleanser</p>
+        </a>
+
+        <a href="/medicube/pdrn-pink-peptide-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-pink-peptide-serum.avif"
+              alt="PDRN Pink Peptide Serum"
+            />
+          </div>
+          <p class="brand-description">PDRN Pink Peptide Serum</p>
+        </a>
+
+        <a
+          href="/medicube/pdrn-pink-vita-coating-sheet-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-pink-vita-coating-sheet-mask.webp"
+              alt="PDRN Pink Vita Coating Sheet Mask"
+            />
+          </div>
+          <p class="brand-description">PDRN Pink Vita Coating Sheet Mask</p>
+        </a>
+
+        <a href="/medicube/pdrn-lip-sleeping-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-lip-sleeping-mask.jpg"
+              alt="PDRN Lip Sleeping Mask"
+            />
+          </div>
+          <p class="brand-description">PDRN Lip Sleeping Mask</p>
+        </a>
+
+        <a
+          href="/medicube/pdrn-pink-caffeine-overnight-wrapping-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-pink-caffeine-overnight-wrapping-mask.jpg"
+              alt="PDRN Pink Caffeine Overnight Wrapping Mask"
+            />
+          </div>
+          <p class="brand-description">
+            PDRN Pink Caffeine Overnight Wrapping Mask
+          </p>
+        </a>
+
+        <a
+          href="/medicube/pdrn-pink-niacinamide-milky-toner.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-pink-niacinamide-milky-toner.avif"
+              alt="PDRN Pink Niacinamide Milky Toner"
+            />
+          </div>
+          <p class="brand-description">PDRN Pink Niacinamide Milky Toner</p>
+        </a>
+
+        <a
+          href="/medicube/pdrn-pink-collagen-gel-toner-pad.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-pink-collagen-gel-toner-pad.avif"
+              alt="PDRN Pink Collagen Gel Toner Pad"
+            />
+          </div>
+          <p class="brand-description">PDRN Pink Collagen Gel Toner Pad</p>
+        </a>
+
+        <a href="/medicube/pdrn-pink-peptide-eye-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pdrn-pink-peptide-eye-cream.avif"
+              alt="PDRN Pink Peptide Eye Cream"
+            />
+          </div>
+          <p class="brand-description">PDRN Pink Peptide Eye Cream</p>
+        </a>
+
+        <a
+          href="/medicube/salmon-pdrn-pink-collagen-jelly-gel-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/salmon-pdrn-pink-collagen-jelly-gel-mask.webp"
+              alt="Salmon PDRN Pink Collagen Jelly Gel Mask"
+            />
+          </div>
+          <p class="brand-description">
+            Salmon PDRN Pink Collagen Jelly Gel Mask
+          </p>
+        </a>
+
+        <a
+          href="/medicube/hyaluronic-multi-peptide-pdrn-serum.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/hyaluronic-multi-peptide-pdrn-serum.jpg"
+              alt="Hyaluronic Multi Peptide PDRN Serum"
+            />
+          </div>
+          <p class="brand-description">Hyaluronic Multi Peptide PDRN Serum</p>
+        </a>
+
+        <a href="/medicube/booster-pro-kuromi-edition.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/booster-pro-kuromi-edition.webp"
+              alt="Booster Pro Kuromi Edition"
+            />
+          </div>
+          <p class="brand-description">
+            [Limited Edition] Booster Pro Kuromi Edition
+          </p>
+        </a>
+
+        <a href="/medicube/booster-pro.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/booster-pro.webp"
+              alt="Booster Pro"
+            />
+          </div>
+          <p class="brand-description">Booster Pro</p>
+        </a>
+
+        <a href="/medicube/mini-booster-pro.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/mini-booster-pro.webp"
+              alt="Mini Booster Pro"
+            />
+          </div>
+          <p class="brand-description">Mini Booster Pro</p>
+        </a>
+
+        <a href="/medicube/ats-air-shot.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/ats-air-shot.jpeg"
+              alt="ATS Air Shot"
+            />
+          </div>
+          <p class="brand-description">ATS Air Shot</p>
+        </a>
+
+        <a href="/medicube/rf-ultra-tune-40-68.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/rf-ultra-tune-40-68.webp"
+              alt="RF Ultra Tune 40.68"
+            />
+          </div>
+          <p class="brand-description">RF Ultra Tune 40.68</p>
+        </a>
+
+        <a href="/medicube/line-shot.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/line-shot.webp"
+              alt="Line Shot"
+            />
+          </div>
+          <p class="brand-description">Line Shot</p>
+        </a>
+
+        <a href="/medicube/booster-gel-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/booster-gel-serum.jpg"
+              alt="Booster Gel Serum"
+            />
+          </div>
+          <p class="brand-description">Booster Gel Serum</p>
+        </a>
+
+        <a href="/medicube/collagen-booster-gel-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/collagen-booster-gel-serum.jpg"
+              alt="Collagen Booster Gel Serum"
+            />
+          </div>
+          <p class="brand-description">Collagen Booster Gel Serum</p>
+        </a>
+
+        <a href="/medicube/zero-pore-pads.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/zero-pore-pads.webp"
+              alt="Zero Pore Pads"
+            />
+          </div>
+          <p class="brand-description">Zero Pore Pads</p>
+        </a>
+
+        <a href="/medicube/zero-pore-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/zero-pore-toner.avif"
+              alt="Zero Pore Toner"
+            />
+          </div>
+          <p class="brand-description">Zero Pore Toner</p>
+        </a>
+
+        <a href="/medicube/zero-pore-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/zero-pore-serum.jpg"
+              alt="Zero Pore Serum"
+            />
+          </div>
+          <p class="brand-description">Zero Pore Serum</p>
+        </a>
+
+        <a href="/medicube/zero-pore-one-day-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/zero-pore-one-day-serum.webp"
+              alt="Zero Pore One-day Serum"
+            />
+          </div>
+          <p class="brand-description">Zero Pore One-day Serum</p>
+        </a>
+
+        <a href="/medicube/zero-pore-one-day-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/zero-pore-one-day-cream.webp"
+              alt="Zero Pore One-day Cream"
+            />
+          </div>
+          <p class="brand-description">Zero Pore One-day Cream</p>
+        </a>
+
+        <a
+          href="/medicube/zero-pore-blackhead-deep-cleansing-oil.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/zero-pore-blackhead-deep-cleansing-oil.avif"
+              alt="Zero Pore Blackhead Deep Cleansing Oil"
+            />
+          </div>
+          <p class="brand-description">
+            Zero Pore Blackhead Deep Cleansing Oil
+          </p>
+        </a>
+
+        <a href="/medicube/zero-foam-cleanser.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/zero-foam-cleanser.jpg"
+              alt="Zero Foam Cleanser"
+            />
+          </div>
+          <p class="brand-description">Zero Foam Cleanser</p>
+        </a>
+
+        <a
+          href="/medicube/zero-pore-capsule-cleansing-foam.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/zero-pore-capsule-cleansing-foam.webp"
+              alt="Zero Pore Capsule Cleansing Foam"
+            />
+          </div>
+          <p class="brand-description">Zero Pore Capsule Cleansing Foam</p>
+        </a>
+
+        <a
+          href="/medicube/zero-pore-blackhead-mud-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/zero-pore-blackhead-mud-mask.webp"
+              alt="Zero Pore Blackhead Mud Mask"
+            />
+          </div>
+          <p class="brand-description">Zero Pore Blackhead Mud Mask</p>
+        </a>
+
+        <a href="/medicube/zero-pore-cooling-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/zero-pore-cooling-mask.avif"
+              alt="Zero Pore Cooling Mask"
+            />
+          </div>
+          <p class="brand-description">Zero Pore Cooling Mask</p>
+        </a>
+
+        <a
+          href="/medicube/zero-pore-madecassoside-pads-mild.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/zero-pore-madecassoside-pads-mild.webp"
+              alt="Zero Pore Madecassoside Pads (Mild)"
+            />
+          </div>
+          <p class="brand-description">Zero Pore Madecassoside Pads (Mild)</p>
+        </a>
+
+        <a
+          href="/medicube/collagen-niacinamide-jelly-cream.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/collagen-niacinamide-jelly-cream.jpg"
+              alt="Collagen Niacinamide Jelly Cream"
+            />
+          </div>
+          <p class="brand-description">Collagen Niacinamide Jelly Cream</p>
+        </a>
+
+        <a
+          href="/medicube/collagen-night-wrapping-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/collagen-night-wrapping-mask.webp"
+              alt="Collagen Night Wrapping Mask"
+            />
+          </div>
+          <p class="brand-description">Collagen Night Wrapping Mask</p>
+        </a>
+
+        <a
+          href="/medicube/collagen-milky-glow-daytime-wrapping-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/collagen-milky-glow-daytime-wrapping-mask.jpg"
+              alt="Collagen Milky Glow Daytime Wrapping Mask"
+            />
+          </div>
+          <p class="brand-description">
+            Collagen Milky Glow Daytime Wrapping Mask
+          </p>
+        </a>
+
+        <a href="/medicube/collagen-glow-bubble-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/collagen-glow-bubble-serum.jpg"
+              alt="Collagen Glow Bubble Serum"
+            />
+          </div>
+          <p class="brand-description">Collagen Glow Bubble Serum</p>
+        </a>
+
+        <a
+          href="/medicube/collagen-glow-booster-milk-serum.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/collagen-glow-booster-milk-serum.webp"
+              alt="Collagen Glow Booster Milk Serum"
+            />
+          </div>
+          <p class="brand-description">Collagen Glow Booster Milk Serum</p>
+        </a>
+
+        <a href="/medicube/triple-collagen-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/triple-collagen-cream.webp"
+              alt="Triple Collagen Cream"
+            />
+          </div>
+          <p class="brand-description">Triple Collagen Cream</p>
+        </a>
+
+        <a href="/medicube/triple-collagen-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/triple-collagen-serum.avif"
+              alt="Triple Collagen Serum"
+            />
+          </div>
+          <p class="brand-description">Triple Collagen Serum</p>
+        </a>
+
+        <a href="/medicube/triple-collagen-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/triple-collagen-toner.jpg"
+              alt="Triple Collagen Toner"
+            />
+          </div>
+          <p class="brand-description">Triple Collagen Toner</p>
+        </a>
+
+        <a href="/medicube/collagen-radiance-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/collagen-radiance-mask.webp"
+              alt="Collagen Radiance Mask"
+            />
+          </div>
+          <p class="brand-description">Collagen Radiance Mask</p>
+        </a>
+
+        <a
+          href="/medicube/no-cast-just-glow-collagen-sunscreen.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/no-cast-just-glow-collagen-sunscreen.jpg"
+              alt="No Cast Just Glow Collagen Sunscreen"
+            />
+          </div>
+          <p class="brand-description">No Cast Just Glow Collagen Sunscreen</p>
+        </a>
+
+        <a
+          href="/medicube/kojic-acid-turmeric-overnight-wrapping-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/kojic-acid-turmeric-overnight-wrapping-mask.webp"
+              alt="Kojic Acid Turmeric Overnight Wrapping Mask"
+            />
+          </div>
+          <p class="brand-description">
+            Kojic Acid Turmeric Overnight Wrapping Mask
+          </p>
+        </a>
+
+        <a
+          href="/medicube/kojic-acid-turmeric-capsule-serum.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/kojic-acid-turmeric-capsule-serum.jpg"
+              alt="Kojic Acid Turmeric Capsule Serum"
+            />
+          </div>
+          <p class="brand-description">Kojic Acid Turmeric Capsule Serum</p>
+        </a>
+
+        <a
+          href="/medicube/kojic-acid-turmeric-toner-pad.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/kojic-acid-turmeric-toner-pad.jpg"
+              alt="Kojic Acid Turmeric Toner Pad"
+            />
+          </div>
+          <p class="brand-description">Kojic Acid Turmeric Toner Pad</p>
+        </a>
+
+        <a href="/medicube/kojic-acid-turmeric-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/kojic-acid-turmeric-toner.jpg"
+              alt="Kojic Acid Turmeric Toner"
+            />
+          </div>
+          <p class="brand-description">Kojic Acid Turmeric Toner</p>
+        </a>
+
+        <a
+          href="/medicube/kojic-acid-turmeric-gold-jelly-gel-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/kojic-acid-turmeric-gold-jelly-gel-mask.webp"
+              alt="Kojic Acid Turmeric Gold Jelly Gel Mask"
+            />
+          </div>
+          <p class="brand-description">
+            Kojic Acid Turmeric Gold Jelly Gel Mask
+          </p>
+        </a>
+
+        <a href="/medicube/deep-vita-c-capsule-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/deep-vita-c-capsule-cream.webp"
+              alt="Deep Vita C Capsule Cream"
+            />
+          </div>
+          <p class="brand-description">Deep Vita C Capsule Cream</p>
+        </a>
+
+        <a href="/medicube/deep-vita-c-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/deep-vita-c-mask.jpeg"
+              alt="Deep Vita C Mask"
+            />
+          </div>
+          <p class="brand-description">Deep Vita C Mask</p>
+        </a>
+
+        <a href="/medicube/deep-vita-c-pads.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/deep-vita-c-pads.jpg"
+              alt="Deep Vita C Pads"
+            />
+          </div>
+          <p class="brand-description">Deep Vita C Pads</p>
+        </a>
+
+        <a href="/medicube/deep-vita-c-ampoule.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/deep-vita-c-ampoule.webp"
+              alt="Deep Vita C Ampoule"
+            />
+          </div>
+          <p class="brand-description">Deep Vita C Ampoule</p>
+        </a>
+
+        <a
+          href="/medicube/deep-vita-c-daily-quick-masks.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/deep-vita-c-daily-quick-masks.jpeg"
+              alt="Deep Vita C Daily Quick Masks"
+            />
+          </div>
+          <p class="brand-description">Deep Vita C Daily Quick Masks</p>
+        </a>
+
+        <a href="/medicube/deep-vita-c-patch.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/deep-vita-c-patch.webp"
+              alt="Deep Vita C Patch"
+            />
+          </div>
+          <p class="brand-description">Deep Vita C Patch</p>
+        </a>
+
+        <a href="/medicube/age-r-vita-c-pro-ampoule.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/age-r-vita-c-pro-ampoule.webp"
+              alt="AGE-R Vita C Pro Ampoule"
+            />
+          </div>
+          <p class="brand-description">AGE-R Vita C Pro Ampoule</p>
+        </a>
+
+        <a
+          href="/medicube/deep-reviving-bakuchiol-retinol-serum.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/deep-reviving-bakuchiol-retinol-serum.jpg"
+              alt="Deep Reviving Bakuchiol Retinol Serum"
+            />
+          </div>
+          <p class="brand-description">Deep Reviving Bakuchiol Retinol Serum</p>
+        </a>
+
+        <a href="/medicube/retinol-nmn-boosting-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/retinol-nmn-boosting-serum.jpg"
+              alt="Retinol NMN Boosting Serum"
+            />
+          </div>
+          <p class="brand-description">Retinol NMN Boosting Serum</p>
+        </a>
+
+        <a
+          href="/medicube/deep-reviving-peptide-eye-cream.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/deep-reviving-peptide-eye-cream.jpg"
+              alt="Deep Reviving Peptide Eye Cream"
+            />
+          </div>
+          <p class="brand-description">Deep Reviving Peptide Eye Cream</p>
+        </a>
+
+        <a href="/medicube/deep-peptide-radiance-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/deep-peptide-radiance-mask.jpg"
+              alt="Deep Peptide Radiance Mask"
+            />
+          </div>
+          <p class="brand-description">Deep Peptide Radiance Mask</p>
+        </a>
+
+        <a
+          href="/medicube/exosome-cica-calming-toner-pads.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/exosome-cica-calming-toner-pads.webp"
+              alt="Exosome Cica Calming Toner Pads"
+            />
+          </div>
+          <p class="brand-description">Exosome Cica Calming Toner Pads</p>
+        </a>
+
+        <a href="/medicube/exosome-cica-calming-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/exosome-cica-calming-toner.webp"
+              alt="Exosome Cica Calming Toner"
+            />
+          </div>
+          <p class="brand-description">Exosome Cica Calming Toner</p>
+        </a>
+
+        <a
+          href="/medicube/exosome-cica-calming-ampoule.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/exosome-cica-calming-ampoule.webp"
+              alt="Exosome Cica Calming Ampoule"
+            />
+          </div>
+          <p class="brand-description">Exosome Cica Calming Ampoule</p>
+        </a>
+
+        <a href="/medicube/exosome-cica-calming-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/exosome-cica-calming-cream.webp"
+              alt="Exosome Cica Calming Cream"
+            />
+          </div>
+          <p class="brand-description">Exosome Cica Calming Cream</p>
+        </a>
+
+        <a href="/medicube/super-cica-calming-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/super-cica-calming-mask.jpeg"
+              alt="Super Cica Calming Mask"
+            />
+          </div>
+          <p class="brand-description">Super Cica Calming Mask</p>
+        </a>
+
+        <a
+          href="/medicube/super-cica-exfoliating-cleansing-balm.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/super-cica-exfoliating-cleansing-balm.jpg"
+              alt="Super Cica Exfoliating Cleansing Balm"
+            />
+          </div>
+          <p class="brand-description">Super Cica Exfoliating Cleansing Balm</p>
+        </a>
+
+        <a href="/medicube/super-cica-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/super-cica-toner.jpg"
+              alt="Super Cica Toner"
+            />
+          </div>
+          <p class="brand-description">Super Cica Toner</p>
+        </a>
+
+        <a href="/medicube/super-cica-ampoule.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/super-cica-ampoule.jpg"
+              alt="Super Cica Ampoule"
+            />
+          </div>
+          <p class="brand-description">Super Cica Ampoule</p>
+        </a>
+
+        <a
+          href="/medicube/super-cica-daily-quick-masks.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/super-cica-daily-quick-masks.webp"
+              alt="Super Cica Daily Quick Masks"
+            />
+          </div>
+          <p class="brand-description">Super Cica Daily Quick Masks</p>
+        </a>
+
+        <a href="/medicube/red-foam-cleanser.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/red-foam-cleanser.webp"
+              alt="Red Foam Cleanser"
+            />
+          </div>
+          <p class="brand-description">Red Foam Cleanser</p>
+        </a>
+
+        <a href="/medicube/red-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/red-toner.webp"
+              alt="Red Toner"
+            />
+          </div>
+          <p class="brand-description">Red Toner</p>
+        </a>
+
+        <a href="/medicube/red-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/red-cream.webp"
+              alt="Red Cream"
+            />
+          </div>
+          <p class="brand-description">Red Cream</p>
+        </a>
+
+        <a href="/medicube/red-centellaca-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/red-centellaca-mask.jpg"
+              alt="Red Centellaca Mask"
+            />
+          </div>
+          <p class="brand-description">Red Centellaca Mask</p>
+        </a>
+
+        <a
+          href="/medicube/red-succinic-acid-panthenol-pads.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/red-succinic-acid-panthenol-pads.jpg"
+              alt="Red Succinic Acid Panthenol Pads"
+            />
+          </div>
+          <p class="brand-description">Red Succinic Acid Panthenol Pads</p>
+        </a>
+
+        <a href="/medicube/red-succinic-acid-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/red-succinic-acid-serum.webp"
+              alt="Red Succinic Acid Serum"
+            />
+          </div>
+          <p class="brand-description">Red Succinic Acid Serum</p>
+        </a>
+
+        <a
+          href="/medicube/21-red-succinic-acid-cleansing-booster-serum.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/21-red-succinic-acid-cleansing-booster-serum.webp"
+              alt="21% Red Succinic Acid Cleansing Booster Serum"
+            />
+          </div>
+          <p class="brand-description">
+            21% Red Succinic Acid Cleansing Booster Serum
+          </p>
+        </a>
+
+        <a
+          href="/medicube/azelaic-acid-16-calming-serum.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/azelaic-acid-16-calming-serum.avif"
+              alt="Azelaic Acid 16 Calming Serum"
+            />
+          </div>
+          <p class="brand-description">Azelaic Acid 16 Calming Serum</p>
+        </a>
+
+        <a
+          href="/medicube/age-r-glutathione-glow-milk-toner.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/age-r-glutathione-glow-milk-toner.webp"
+              alt="AGE-R Glutathione Glow Milk Toner"
+            />
+          </div>
+          <p class="brand-description">AGE-R Glutathione Glow Milk Toner</p>
+        </a>
+
+        <a
+          href="/medicube/age-r-glutathione-glow-serum.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/age-r-glutathione-glow-serum.webp"
+              alt="AGE-R Glutathione Glow Serum"
+            />
+          </div>
+          <p class="brand-description">AGE-R Glutathione Glow Serum</p>
+        </a>
+
+        <a
+          href="/medicube/age-r-glutathione-glow-capsule-cream.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/age-r-glutathione-glow-capsule-cream.webp"
+              alt="AGE-R Glutathione Glow Capsule Cream"
+            />
+          </div>
+          <p class="brand-description">AGE-R Glutathione Glow Capsule Cream</p>
+        </a>
+
+        <a href="/medicube/txa-niacinamide-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/txa-niacinamide-serum.avif"
+              alt="TXA Niacinamide Serum"
+            />
+          </div>
+          <p class="brand-description">TXA Niacinamide Serum</p>
+        </a>
+
+        <a
+          href="/medicube/txa-niacinamide-capsule-cream.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/txa-niacinamide-capsule-cream.webp"
+              alt="TXA Niacinamide Capsule Cream"
+            />
+          </div>
+          <p class="brand-description">TXA Niacinamide Capsule Cream</p>
+        </a>
+
+        <a
+          href="/medicube/hypochlorous-acid-power-soothing-spray.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/hypochlorous-acid-power-soothing-spray.jpg"
+              alt="Hypochlorous Acid Power Soothing Spray"
+            />
+          </div>
+          <p class="brand-description">
+            Hypochlorous Acid Power Soothing Spray
+          </p>
+        </a>
+
+        <a
+          href="/medicube/hyaluronic-acid-capsule-cream.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/hyaluronic-acid-capsule-cream.webp"
+              alt="Hyaluronic Acid Capsule Cream"
+            />
+          </div>
+          <p class="brand-description">Hyaluronic Acid Capsule Cream</p>
+        </a>
+
+        <a href="/medicube/vita-k-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/vita-k-cream.jpg"
+              alt="Vita K Cream"
+            />
+          </div>
+          <p class="brand-description">Vita K Cream</p>
+        </a>
+
+        <a
+          href="/medicube/red-body-peeling-shot-cleanser.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/red-body-peeling-shot-cleanser.jpg"
+              alt="Red Body Peeling Shot Cleanser"
+            />
+          </div>
+          <p class="brand-description">Red Body Peeling Shot Cleanser</p>
+        </a>
+
+        <a href="/medicube/red-body-wash.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/red-body-wash.webp"
+              alt="Red Body Wash"
+            />
+          </div>
+          <p class="brand-description">Red Body Wash</p>
+        </a>
+
+        <a
+          href="/medicube/red-clear-capsule-body-lotion.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/red-clear-capsule-body-lotion.webp"
+              alt="Red Clear Capsule Body Lotion"
+            />
+          </div>
+          <p class="brand-description">Red Clear Capsule Body Lotion</p>
+        </a>
+
+        <a href="/medicube/cleansing-wipes.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/cleansing-wipes.jpg"
+              alt="Cleansing Wipes"
+            />
+          </div>
+          <p class="brand-description">Cleansing Wipes</p>
+        </a>
+
+        <a href="/medicube/clover-heart-facial-sponge.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/clover-heart-facial-sponge.jpg"
+              alt="Clover Heart Facial Sponge"
+            />
+          </div>
+          <p class="brand-description">Clover Heart Facial Sponge</p>
+        </a>
+
+        <a href="/medicube/pad-travel-case.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/medicube-img/pad-travel-case.webp"
+              alt="Pad Travel Case"
+            />
+          </div>
+          <p class="brand-description">Pad Travel Case</p>
+        </a>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2024 Product Catalogue. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
