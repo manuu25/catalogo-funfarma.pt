@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biodance - Catálogo de Produtos</title>
+
+    <style>
+      /* --- 1. RESET Y BASE --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        line-height: 1.6;
+        color: #2c3e50;
+        background-color: #f8f9fa;
+        min-height: 100vh;
+      }
+
+      /* --- 2. LAYOUT PRINCIPAL (Responsivo) --- */
+      .container {
+        width: 100%;
+        max-width: 1200px; /* Ancho máximo para pantallas grandes */
+        margin: 0 auto;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      /* --- 3. ENCABEZADO Y TEXTO INTRODUCTORIO --- */
+      .header {
+        display: flex;
+        flex-direction: column; /* Apila logo y texto */
+        align-items: center;
+        text-align: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .brand-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Caso tenha um logo, pode usar esta classe */
+      .header-logo {
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      .subtitle-black {
+        max-width: 800px;
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.6;
+        text-align: justify; /* Justificamos el texto para mejor lectura */
+      }
+
+      /* --- 4. CUADRÍCULA DE PRODUCTOS (GRID RESPONSIVO) --- */
+      .brands-grid {
+        display: grid;
+        /* La clave de la responsividad: crea tantas columnas como quepan (min 180px) */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 25px; /* Espacio uniforme entre tarjetas */
+      }
+
+      /* --- 5. TARJETA DE PRODUCTO (Organización y Contenido) --- */
+      .brand-card {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 15px;
+        text-decoration: none;
+        color: #2c3e50;
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        /* Asegura que imagen y texto se organicen correctamente */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Empuja el footer o el nombre si es necesario */
+        text-align: center;
+        min-height: 100%; /* Ayuda a igualar la altura de las tarjetas en la cuadrícula */
+      }
+
+      .brand-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-color: #bdc3c7;
+      }
+
+      /* Contenedor de la imagen para control de altura */
+      .brand-logo {
+        width: 100%;
+        height: auto; /* Altura flexible */
+        margin-bottom: 15px;
+        display: flex; /* Centrado de imagen dentro del contenedor */
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .brand-img {
+        width: 100%;
+        max-height: 200px; /* Limita la altura de la imagen en tarjetas altas */
+        object-fit: contain; /* Asegura que la imagen se vea completa sin cortar */
+      }
+
+      .brand-description {
+        font-size: 0.95rem;
+        font-weight: 700; /* Asegura que el nombre sea legible */
+        margin-top: auto; /* Empuja el nombre al final si el contenido de arriba varía */
+        line-height: 1.3;
+      }
+
+      /* --- 6. FOOTER --- */
+      .footer {
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 20px;
+        border-top: 1px solid #ddd;
+        font-size: 0.8rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img
+          class="header-logo"
+          src="/public-img/biodance-img/logo-biodance.png"
+          alt="Skin 1004 Logo"
+        />
+        <p class="subtitle-black">
+          A Biodance dedica-se a realçar a luminosidade natural da pele através
+          de ingredientes eficazes e fórmulas inovadoras. Conhecida pelas suas
+          máscaras de colagénio profundo e soluções de hidratação intensa, a
+          marca combina ciência e natureza para fortalecer a barreira cutânea e
+          proporcionar uma tez saudável e radiante.
+        </p>
+      </header>
+
+      <main class="brands-grid">
+        <a href="/biodance/bio-collagen-real-deep-mask.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/bio-collagen-real-deep-mask.avif"
+              alt="Bio Collagen-Real Deep Mask"
+            />
+          </div>
+          <p class="brand-description">Bio Collagen-Real Deep Mask</p>
+        </a>
+
+        <a
+          href="/biodance/hydro-cera-nol-real-deep-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/hydro-cera-nol-real-deep-mask.jpg"
+              alt="Hydro Cera-nol Real Deep Mask"
+            />
+          </div>
+          <p class="brand-description">Hydro Cera-nol Real Deep Mask</p>
+        </a>
+
+        <a
+          href="/biodance/refreshing-sea-kelp-real-deep-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/refreshing-sea-kelp-real-deep-mask.webp"
+              alt="Refreshing Sea Kelp Real Deep Mask"
+            />
+          </div>
+          <p class="brand-description">Refreshing Sea Kelp Real Deep Mask</p>
+        </a>
+
+        <a
+          href="/biodance/radiant-vita-niacinamide-real-deep-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/radiant-vita-niacinamide-real-deep-mask.jpg"
+              alt="Radiant Vita Niacinamide Real Deep Mask"
+            />
+          </div>
+          <p class="brand-description">
+            Radiant Vita Niacinamide Real Deep Mask
+          </p>
+        </a>
+
+        <a
+          href="/biodance/pore-perfecting-collagen-peptide-serum.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/pore-perfecting-collagen-peptide-serum.jpeg"
+              alt="Pore Perfecting Collagen Peptide Serum"
+            />
+          </div>
+          <p class="brand-description">
+            Pore Perfecting Collagen Peptide Serum
+          </p>
+        </a>
+
+        <a href="/biodance/hydro-cera-nol-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/hydro-cera-nol-serum.webp"
+              alt="Hydro Cera-nol Serum"
+            />
+          </div>
+          <p class="brand-description">Hydro Cera-nol Serum</p>
+        </a>
+
+        <a href="/biodance/refreshing-sea-kelp-serum.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/refreshing-sea-kelp-serum.jpg"
+              alt="Refreshing Sea Kelp Serum"
+            />
+          </div>
+          <p class="brand-description">Refreshing Sea Kelp Serum</p>
+        </a>
+
+        <a
+          href="/biodance/vita-niacinamide-gel-toner-pads.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/vita-niacinamide-gel-toner-pads.webp"
+              alt="Vita Niacinamide Gel Toner Pads"
+            />
+          </div>
+          <p class="brand-description">Vita Niacinamide Gel Toner Pads</p>
+        </a>
+
+        <a
+          href="/biodance/rejuvenating-caviar-pdrn-real-deep-mask.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/rejuvenating-caviar-pdrn-real-deep-mask.jpg"
+              alt="Rejuvenating Caviar PDRN Real Deep Mask"
+            />
+          </div>
+          <p class="brand-description">
+            Rejuvenating Caviar PDRN Real Deep Mask
+          </p>
+        </a>
+
+        <a
+          href="/biodance/pore-perfecting-collagen-peptide-cream.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/pore-perfecting-collagen-peptide-cream.webp"
+              alt="Pore Perfecting Collagen Peptide Cream"
+            />
+          </div>
+          <p class="brand-description">
+            Pore Perfecting Collagen Peptide Cream
+          </p>
+        </a>
+
+        <a href="/biodance/vita-niacinamide-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/vita-niacinamide-cream.webp"
+              alt="Vita Niacinamide Cream"
+            />
+          </div>
+          <p class="brand-description">Vita Niacinamide Cream</p>
+        </a>
+
+        <a href="/biodance/skin-glow-essence-cream.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/skin-glow-essence-cream.jpg"
+              alt="Skin Glow Essence Cream"
+            />
+          </div>
+          <p class="brand-description">Skin Glow Essence Cream</p>
+        </a>
+
+        <a href="/biodance/collagen-cleansing-oil.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/collagen-cleansing-oil.webp"
+              alt="Collagen Cleansing Oil"
+            />
+          </div>
+          <p class="brand-description">Collagen Cleansing Oil</p>
+        </a>
+
+        <a
+          href="/biodance/collagen-mask-to-foam-cleanser.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/collagen-mask-to-foam-cleanser.webp"
+              alt="Collagen Mask to Foam Cleanser"
+            />
+          </div>
+          <p class="brand-description">Collagen Mask to Foam Cleanser</p>
+        </a>
+
+        <a href="/biodance/first-synergy-toner.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/first-synergy-toner.webp"
+              alt="First Synergy Toner"
+            />
+          </div>
+          <p class="brand-description">First Synergy Toner</p>
+        </a>
+
+        <a
+          href="/biodance/skin-refining-mild-pha-toner.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/skin-refining-mild-pha-toner.webp"
+              alt="Skin Refining Mild PHA Toner"
+            />
+          </div>
+          <p class="brand-description">Skin Refining Mild PHA Toner</p>
+        </a>
+
+        <a
+          href="/biodance/hydro-ceramide-cleansing-powder.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/hydro-ceramide-cleansing-powder.jpg"
+              alt="Hydro Ceramide Cleansing Powder"
+            />
+          </div>
+          <p class="brand-description">Hydro Ceramide Cleansing Powder</p>
+        </a>
+
+        <a
+          href="/biodance/soothing-barrier-cleansing-foam.html"
+          class="brand-card"
+        >
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/soothing-barrier-cleansing-foam.jpg"
+              alt="Soothing Barrier Cleansing Foam"
+            />
+          </div>
+          <p class="brand-description">Soothing Barrier Cleansing Foam</p>
+        </a>
+
+        <a href="/biodance/cotton-pad.html" class="brand-card">
+          <div class="brand-logo">
+            <img
+              class="brand-img"
+              src="/public-img/biodance-img/cotton-pad.webp"
+              alt="Cotton Pad"
+            />
+          </div>
+          <p class="brand-description">Cotton Pad</p>
+        </a>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2024 Product Catalogue. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
